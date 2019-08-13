@@ -1,9 +1,20 @@
+@font-face {font-family: 'wenhua';src:url('font.woff2') format('woff2')}
 *{
 	margin: 0;padding: 0;
 }
 html{
     background-color: #1e1e1e;
 }
+
+html::-webkit-scrollbar {
+    width: 8px;
+    height: 6px;
+}
+html::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #cbcbcb;
+}
+
 
 body{
 	overflow-x: hidden;
@@ -156,16 +167,6 @@ opacity: 1;
   /* overflow: hidden; */
 }
 
-.part{
-	/* opacity: 0.2; */
-	/* transition: opacity 1.5s; */
-}
-
-.part:hover{
-	opacity: 1;
-}
-
-
 .text{
   position: absolute;
   left: 0;
@@ -179,10 +180,9 @@ opacity: 1;
   font-weight: 900;
   letter-spacing: 0.1em;
   color: #ffffff;
-  text-shadow: 2px 3px 4px #000000ab;
+  text-shadow: 1px 1px 4px #000000;
   z-index: 1;
   pointer-events: none;
-  text-overflow: ellipsis;
   overflow: hidden;
 }
 
@@ -319,6 +319,7 @@ header:after {
 	color: #fff;
 	right: 100px;
 	text-align: right;
+	font-family:'wenhua';
 }
 
 #sitename{
@@ -350,6 +351,10 @@ footer{
 	text-align: center;
 	color: #eee;
 	padding: 20px;
+}
+
+footer a {
+    color: #eee;
 }
 
 

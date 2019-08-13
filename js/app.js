@@ -1,17 +1,18 @@
 getData()
 
+var offsetHeight = document.getElementsByClassName('title')[0].offsetTop;
 
 document.addEventListener("scroll", throttle(function() {
-  if (window.pageYOffset > window.screen.height - 464) {
+  if(window.pageYOffset >= window.screen.height - offsetHeight) {
       sitename.classList.add('sitename-transform');
       motto.classList.add('finish');
 
   } else {
-        sitename.classList.remove('sitename-transform');
+      sitename.classList.remove('sitename-transform');
       motto.classList.remove('finish');
-
   }
-},50),{passive: true});
+
+},50));
 
 function init(obj){
 for (let i = obj.length - 1; i >= 0; i--) {
@@ -50,7 +51,6 @@ menuBtn.addEventListener('click', function() {
         topRect.classList.add('top-drop')
         bottomRect.classList.add('bottom-drop')
         nav.classList.add('nav-open')
-        //container.classList.add('body-move')
         menuBtn.classList.add('menu-move')
 
 
@@ -78,14 +78,13 @@ function closeNav() {
 	topRect.classList.remove('top-drop')
     bottomRect.classList.remove('bottom-drop')
     nav.classList.remove('nav-open')
-    //container.classList.remove('body-move')
     menuBtn.classList.remove('menu-move')
 }
 
 //发布
  function post() {
             let xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://api.github.com/repos/HTML50/tinyLog/issues/1/comments');
+            xhr.open('POST', 'https://api.github.com/repos/HTML50/petal/issues/1/comments');
             xhr.setRequestHeader("Authorization", "Basic " + btoa('4bt:000666999bt'))
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
@@ -132,7 +131,7 @@ function closeNav() {
 //获取内容
     function getData() {
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://api.github.com/repos/HTML50/tinyLog/issues/1/comments?per_page=30');
+        xhr.open('GET', 'https://api.github.com/repos/HTML50/petal/issues/1/comments?per_page=30');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 clearTimeout(timeout);
