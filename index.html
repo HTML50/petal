@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <title>Petal❀</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="http://cdn.repository.webfont.com/wwwroot/js/wf/youziku.api.min.js"></script>
+<script type="text/javascript">
+   $webfont.load("body", "12e2c90ebab5430ebe4c9f55b77e9c92", "wwguanggaos");
+   $webfont.draw();
+</script>
+</head>
+<body>
+     
+<div id="loading">
+    <petal></petal>
+    <petal></petal>
+    <petal></petal>
+    <petal></petal>
+    <petal class="trick"></petal>
+    <petal></petal>
+    <petal></petal>
+    <petal></petal>
+    <petal class="falling"></petal>
+</div>
+
+<header></header>
+
+<div class="title">
+    <div id="sitename" class="finish">落华</div>
+    <div id="motto" class="finish">世上只有一种善,那就是知识,也只有一种恶,那就是无知</div>
+</div>
+
+<button id="menuBtn"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><g fill-opacity=".8" fill-rule="evenodd"><rect id="topRect" width="22" height="3" x="19" y="24" rx=".75" style="transform-origin: 30px 25.5px;transition: transform 0.3s"></rect><rect id="bottomRect" width="22" height="3" x="19" y="33" rx=".75" style="transform-origin: 30px 34.5px;transition: transform 0.3s"></rect></g></svg> </button>
+
+<div id="nav">
+    <p>
+        <h1>About</h1>
+        <p>『落华』是一个基于Github Issues的轻型博客项目，无需数据库，使用简便。</p>
+    </p>
+    <hr>
+   <a href="#" id="new">🖋 新建随笔 </a>
+</div>
+<div id="container" class="bg"></div>
+<footer class="bg">醉卧沙场君莫笑，古来征战几人回？</footer>
+
+
+<div id='editor'>
+    <div class="container">
+        <div class="column">
+            <h1>内容</h1>
+            <div>
+                <textarea id="markdown"></textarea>
+            </div>
+        </div>
+        <div class="column">
+            <h1>预览</h1>
+            <div id="preview"></div>
+        </div>
+        <div class="submit">
+            <div><img id="submitBtn" class="hover" src="img/check.png" title="提交"></div>
+            <div><img id="closeBtn" class="hover" src="img/cross.png" title="关闭"></div>
+        </div>
+    </div>
+    </div>
+
+
+
+<script src="js/trianglify.min.js"></script>
+<script src="js/marked.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+</html>
