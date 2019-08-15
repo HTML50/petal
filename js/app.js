@@ -1,5 +1,6 @@
 getData()
 
+
 var offsetHeight = document.getElementsByClassName('title')[0].offsetTop;
 
 document.addEventListener("scroll", throttle(function() {
@@ -30,14 +31,7 @@ for (let i = obj.length - 1; i >= 0; i--) {
       ele.className = 'filter';
       ele.appendChild(pattern.canvas());
 
-  var li = document.createElement('div');
-	li.className = 'part'
-	li.appendChild(ele)
-
-
-
-
-  container.appendChild(li);
+  container.appendChild(ele);
 
 }
 }
@@ -56,7 +50,6 @@ menuBtn.addEventListener('click', function() {
 
         setTimeout(function() {
             document.body.addEventListener('click', function(e) {
-            	console.log(e.target)
                 if (e.target.nodeName === 'BODY') {
                     closeNav()
                     document.body.removeEventListener('click', arguments.callee)
@@ -91,6 +84,7 @@ function closeNav() {
                   if(xhr.status === 201){
                     editor.style.display = 'none';
                     alert('发布成功');
+                    window.location.reload();
                   }
                     
                     if(xhr.status === 401){
@@ -102,9 +96,10 @@ function closeNav() {
             xhr.send(JSON.stringify({ "body": markdown.value }));
         }
 
-//新建内容
+      //新建内容
       document.getElementById('new').addEventListener('click', function() {
             editor.style.display = 'block';
+            markdown.focus();
         })
 
         submitBtn.addEventListener('click', function() {
@@ -121,13 +116,7 @@ function closeNav() {
             editor.style.display = 'none';
         })
 
-        markdown.addEventListener('keyup', function() {
-            preview.innerHTML = marked(markdown.value);
-            setTimeout(function() {
-                if(markdown.selectionStart === markdown.textLength)
-                    preview.scrollTop = preview.scrollHeight;
-            }, 100)
-        })
+
 //获取内容
     function getData() {
         let xhr = new XMLHttpRequest();
@@ -138,7 +127,6 @@ function closeNav() {
                 init(JSON.parse(xhr.response))
                 loading.style.opacity = 0;
                 document.getElementsByTagName('header')[0].style.background = "#0000"
-
                 setTimeout(function(){
                   loading.style.display = 'none'
                 },1000)
