@@ -4,7 +4,7 @@ getData()
 var offsetHeight = document.getElementsByClassName('title')[0].offsetTop;
 
 document.addEventListener("scroll", throttle(function() {
-  if(window.pageYOffset >= window.screen.height - offsetHeight) {
+  if(window.pageYOffset >= offsetHeight) {
       sitename.classList.add('sitename-transform');
       motto.classList.add('finish');
 
